@@ -38,7 +38,7 @@ def main(path):
     month = path[path.find("-")+1:path.find("-")+7]
     pdf,num_pages = read_all_pages(path)
     df_final = extract_all_pages(pdf,num_pages)
-    #df_final['Mes'] = month
+    df_final['Mes'] = month
     df_final.to_excel("Teste.xlsx")
     return df_final
 
