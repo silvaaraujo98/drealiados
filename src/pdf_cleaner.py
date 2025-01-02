@@ -34,13 +34,8 @@ def extract_all_pages(pdf,num_pages):
         df_final = pd.concat([df_final,df_limpo])
     return df_final
 def main(path):
-    path  = "data/raw/DRE-Abr-24.pdf"
     month = path[path.find("-")+1:path.find("-")+7]
     pdf,num_pages = read_all_pages(path)
     df_final = extract_all_pages(pdf,num_pages)
     df_final['Mes'] = month
-    df_final.to_excel("Teste.xlsx")
     return df_final
-
-path  = "data/raw/DRE-Abr-24.pdf"
-main(path)
